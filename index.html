@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI미래교육박람회 참가 안내</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d1b4b; --blue:#1e6fd9; --blue-pale:#e8f1fd;
+  --green:#1a8a5a; --green-pale:#e4f5ed;
+  --amber:#e6951a; --amber-pale:#fff6e0;
+  --red:#d63031;   --red-pale:#fdecea;
+  --pink:#e8709a;
+  --text:#1a1a2e;  --sub:#4a5568; --muted:#888;
+  --border:#dde4ef; --bg:#f2f5fb; --white:#fff;
+  --r:16px; --r-sm:10px;
+  --shadow:0 2px 14px rgba(13,27,75,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg, #0a1535 0%, #0d1b4b 50%, #111d5e 100%);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 70% 40%,rgba(30,111,217,.3) 0%,transparent 60%),
+             radial-gradient(ellipse at 20% 70%,rgba(120,80,200,.2) 0%,transparent 50%);
+}
+.hero-img{display:none;}
+.hero-body{
+  position:relative;z-index:2;
+  padding:28px 20px 30px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.hero-logo{
+  width:min(280px, 72vw);
+  height:auto;
+  display:block;
+  margin:0 auto 18px;
+  filter:drop-shadow(0 4px 24px rgba(100,160,255,.35));
+}
+.hero-badge{display:inline-block;background:var(--pink);color:#fff;font-size:12px;font-weight:900;
+  padding:4px 14px;border-radius:20px;margin-bottom:12px;}
+.hero-title{font-size:clamp(19px,5.5vw,27px);font-weight:900;line-height:1.32;margin-bottom:14px;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.h-chip{display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+  border-radius:20px;padding:5px 12px;font-size:12.5px;color:rgba(255,255,255,.92);}
+
+/* ── WRAP ── */
+.wrap{max-width:660px;margin:0 auto;padding:0 15px 60px;}
+
+/* ── SECTION ── */
+.sec{margin-top:14px;}
+.sec-head{display:flex;align-items:center;gap:10px;
+  padding:13px 16px;background:var(--navy);border-radius:var(--r) var(--r) 0 0;color:#fff;}
+.sec-icon{font-size:20px;flex-shrink:0;}
+.sec-title{font-size:15px;font-weight:700;letter-spacing:.01em;}
+.sec-body{background:var(--white);border:1.5px solid var(--border);border-top:none;
+  border-radius:0 0 var(--r) var(--r);padding:18px 17px;box-shadow:var(--shadow);}
+
+/* ── ROW ── */
+.row{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #edf2f7;align-items:flex-start;font-size:14px;}
+.row:last-child{border-bottom:none;padding-bottom:0;}
+.row:first-child{padding-top:0;}
+.row-icon{font-size:16px;flex-shrink:0;width:22px;text-align:center;margin-top:2px;}
+.row-body{flex:1;color:var(--text);}
+.row-body strong{font-weight:700;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:2px;}
+
+/* ── CALLOUT ── */
+.callout{border-radius:var(--r-sm);padding:12px 14px;margin-top:10px;
+  display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.7;}
+.ci{font-size:16px;flex-shrink:0;margin-top:1px;}
+.callout.blue  {background:var(--blue-pale);  border-left:3.5px solid var(--blue);  color:#1a3a6b;}
+.callout.green {background:var(--green-pale); border-left:3.5px solid var(--green); color:#0e4f30;}
+.callout.amber {background:var(--amber-pale); border-left:3.5px solid var(--amber); color:#7a4f00;}
+.callout.red   {background:var(--red-pale);   border-left:3.5px solid var(--red);   color:#7a1515;}
+.callout strong{font-weight:700;}
+
+/* ── STEP FLOW ── */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.flow-box{background:var(--blue-pale);border:1.5px solid #b3cfef;border-radius:var(--r-sm);
+  padding:7px 13px;font-size:13px;font-weight:700;color:var(--navy);white-space:nowrap;}
+.flow-arr{font-size:14px;color:var(--blue);font-weight:900;}
+
+/* ── SECTION IMAGE ── */
+.sec-img{width:100%;display:block;border-radius:var(--r-sm);
+  border:1.5px solid var(--border);margin-top:14px;}
+
+/* ── PARKING ── */
+.park-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px;}
+.park-cell{background:var(--blue-pale);border:1.5px solid #b3cfef;
+  border-radius:var(--r-sm);text-align:center;padding:10px 5px;}
+.park-t{font-size:12px;color:var(--sub);font-weight:500;margin-bottom:2px;}
+.park-p{font-size:15px;font-weight:700;color:var(--navy);}
+
+/* ── SCHEDULE ── */
+.schedule-wrap{overflow-x:auto;border-radius:var(--r-sm);margin-top:12px;}
+.schedule-table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px;}
+.schedule-table th{background:var(--navy);color:#fff;font-weight:700;padding:9px 12px;text-align:left;}
+.schedule-table th:first-child{border-radius:8px 0 0 0;width:110px;}
+.schedule-table th:last-child{border-radius:0 8px 0 0;}
+.schedule-table td{padding:9px 12px;border-bottom:1px solid #edf2f7;vertical-align:top;font-size:13px;}
+.schedule-table tr:last-child td{border-bottom:none;}
+.schedule-table tr:nth-child(even) td{background:#f8fafd;}
+.t-time{font-weight:700;color:var(--blue);white-space:nowrap;}
+.row-star td{background:#fff8e6!important;font-weight:500;}
+.row-mem td{background:#f0faf6!important;}
+
+/* ── SNACK ITEMS ── */
+.snack-list{margin-top:10px;display:flex;flex-direction:column;gap:8px;}
+.snack-item{display:flex;align-items:center;gap:12px;
+  background:var(--amber-pale);border:1.5px solid #f5c842;
+  border-radius:var(--r-sm);padding:12px 14px;}
+.snack-em{font-size:24px;flex-shrink:0;}
+.snack-body{flex:1;}
+.snack-name{font-size:14px;font-weight:700;color:var(--text);}
+.snack-desc{font-size:13px;color:var(--sub);}
+
+/* ── BROCHURE LIGHTBOX ── */
+.brochure-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px;}
+.brochure-thumb{width:100%;display:block;border-radius:var(--r-sm);
+  border:1.5px solid var(--border);cursor:zoom-in;transition:opacity .15s;}
+.brochure-thumb:hover{opacity:.85;}
+.brochure-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;}
+
+/* LIGHTBOX OVERLAY */
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);
+  z-index:9999;align-items:center;justify-content:center;padding:16px;cursor:zoom-out;}
+.lb-overlay.active{display:flex;}
+.lb-img{max-width:100%;max-height:92vh;border-radius:12px;object-fit:contain;
+  box-shadow:0 8px 40px rgba(0,0,0,.5);}
+.lb-close{position:fixed;top:16px;right:20px;background:rgba(255,255,255,.15);
+  border:none;color:#fff;font-size:26px;cursor:pointer;border-radius:50%;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  transition:background .15s;}
+.lb-close:hover{background:rgba(255,255,255,.3);}
+
+/* ── KAKAO BTN ── */
+.kakao-btn{display:flex;align-items:center;justify-content:center;gap:8px;
+  background:#FEE500;color:#3a1d1d;width:100%;padding:14px;border-radius:var(--r-sm);
+  font-size:14.5px;font-weight:700;text-decoration:none;margin-top:10px;transition:filter .15s;}
+.kakao-btn:hover{filter:brightness(.93);}
+
+/* ── DIVIDER ── */
+.dlabel{display:flex;align-items:center;gap:10px;margin:20px 0 0;
+  font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;}
+.dlabel::before,.dlabel::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy);color:rgba(255,255,255,.7);text-align:center;
+  padding:28px 20px;font-size:13px;margin-top:30px;line-height:1.9;}
+.footer strong{color:#fff;}
+.footer a{color:#7ab8ff;text-decoration:none;}
+
+@media(max-width:480px){
+  .park-grid{grid-template-columns:repeat(2,1fr);}
+  .brochure-grid{grid-template-columns:1fr;}
+  .flow{gap:4px;}
+  .flow-box{font-size:12px;padding:6px 10px;}
+  .sec-body{padding:15px 13px;}
+}
+</style>
+</head>
+<body>
+
+<!-- 라이트박스 오버레이 -->
+<div class="lb-overlay" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img class="lb-img" id="lb-img" src="" alt="">
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-body">
+    <div class="hero-badge">📢 참가 안내</div>
+    <img src="1.png" alt="교실을 바꾸는 AI미래교육 박람회" class="hero-logo">
+    <div class="hero-chips">
+      <span class="h-chip">📅 2026. 6. 20.(토) 10:00~17:00</span>
+      <span class="h-chip">📍 숙명여자대학교 눈꽃광장홀</span>
+      <span class="h-chip">🤝 AI미래교육연구회 × 쌤픽에듀</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ① 입장 안내 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">⏰</span>
+      <span class="sec-title">입장 안내</span>
+    </div>
+    <div class="sec-body">
+      <div class="row">
+        <span class="row-icon">🕘</span>
+        <div class="row-body"><strong>입장 시간</strong> — 09:30부터 가능</div>
+      </div>
+      <div class="row">
+        <span class="row-icon">📍</span>
+        <div class="row-body">
+          <strong>입장 위치</strong> — 숙명여자대학교 제2창학캠퍼스 눈꽃광장홀
+        </div>
+      </div>
+      <div class="row">
+        <span class="row-icon">📋</span>
+        <div class="row-body">
+          <strong>도착 후 순서</strong>
+          <div class="flow">
+            <div class="flow-box">✅ 등록</div>
+            <div class="flow-arr">→</div>
+            <div class="flow-box">🏷️ 명찰 수령</div>
+            <div class="flow-arr">→</div>
+            <div class="flow-box">🎁 간식 쿠폰</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row" style="margin-top:4px;">
+        <span class="row-icon">🅿️</span>
+        <div class="row-body"><span class="sub">※ 주차권은 출구에서 구입 가능 (유료, 후불권)</span></div>
+      </div>
+
+      <!-- 강의실 배치도 -->
+      <div style="font-size:13px;font-weight:700;color:var(--sub);margin:16px 0 0;">🗺️ 강의실 배치도</div>
+      <img src="22.png" alt="강의실 배치도" class="sec-img">
+    </div>
+  </div>
+
+  <!-- ② 오시는 길 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">🚇</span>
+      <span class="sec-title">오시는 길</span>
+    </div>
+    <div class="sec-body">
+      <div class="row">
+        <span class="row-icon">🚅</span>
+        <div class="row-body"><strong>KTX · SRT</strong> → 서울역 하차</div>
+      </div>
+      <div class="row">
+        <span class="row-icon">🚉</span>
+        <div class="row-body">
+          <strong>지하철 1 · 4호선</strong> → 숙대입구역<br>
+          <span class="sub">딱 2정거장, 5분이면 끝!</span>
+        </div>
+      </div>
+      <div class="row">
+        <span class="row-icon">🚌</span>
+        <div class="row-body">
+          <strong>버스 400번</strong> 또는 <strong>마을버스 용산04</strong><br>
+          → 숙명여대 정 · 후문 하차 🎉
+        </div>
+      </div>
+      <div class="callout amber">
+        <span class="ci">💡</span>
+        <div>대중교통 이용을 <strong>강력 권장</strong>드립니다!<br>
+          <a href="https://www.sookmyung.ac.kr/kr/intro/directions.do" target="_blank"
+             style="color:var(--blue);font-weight:700;text-decoration:none;display:inline-block;margin-top:5px;">
+            📍 숙명여대 공식 오시는 길 안내 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ 주차 안내 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">🅿️</span>
+      <span class="sec-title">주차 안내</span>
+    </div>
+    <div class="sec-body">
+      <div class="row">
+        <span class="row-icon">🚗</span>
+        <div class="row-body">교내 주차 가능 <strong>(유료, 후불권)</strong><br>
+          <span class="sub">귀가 전, <strong>출구</strong>에서 구입하시면 됩니다</span>
+        </div>
+      </div>
+      <div class="park-grid">
+        <div class="park-cell"><div class="park-t">2시간</div><div class="park-p">2,500원</div></div>
+        <div class="park-cell"><div class="park-t">4시간</div><div class="park-p">5,000원</div></div>
+        <div class="park-cell"><div class="park-t">6시간</div><div class="park-p">7,500원</div></div>
+        <div class="park-cell"><div class="park-t">8시간</div><div class="park-p">10,000원</div></div>
+      </div>
+      <div class="callout red">
+        <span class="ci">⚠️</span>
+        <div>혼잡이 예상되오니 <strong>대중교통 적극 추천드립니다!</strong></div>
+      </div>
+      <div class="callout amber" style="margin-top:8px;">
+        <span class="ci">💡</span>
+        <div>
+          <strong>Tip 1.</strong> 자차로 오신다면 네비에<br>
+          <strong>"숙명여자대학교 제2창학캠퍼스 주차장"</strong>으로 찍고 오세요!<br>
+          <a href="https://map.naver.com/p/entry/place/35824354?c=15.00,0,0,0,dh" target="_blank"
+             style="color:var(--blue);font-weight:700;font-size:13px;text-decoration:none;display:inline-block;margin-top:4px;">
+            🗺️ 네이버지도 바로가기 →
+          </a><br><br>
+          <strong>Tip 2.</strong> 주차 후에는 <strong>지하 2층에서 행사장인 지하 1층으로</strong> 올라오세요!<br><br>
+          <strong>Tip 3.</strong> 엘리베이터는 <strong style="font-size:1.05em;color:var(--blue);background:var(--blue-pale);padding:2px 8px;border-radius:6px;">🛗 음악대학 엘리베이터</strong> 만 이용 가능!<br>
+          <span style="color:var(--red);font-weight:700;">⛔ 약학대학 / 사회교육관 / 미술대학 쪽 엘리베이터로는 출입 불가!</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">
+        <img src="12.jpg" alt="주차 출입구 안내 제1캠퍼스" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('12.jpg')">
+        <img src="13.jpg" alt="주차 출입구 안내 제2캠퍼스" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('13.jpg')">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+        <img src="3.jpg" alt="주차장 1" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('3.jpg')">
+        <img src="4.jpg" alt="주차장 2" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('4.jpg')">
+        <img src="5.jpg" alt="주차장 3" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('5.jpg')">
+        <img src="6.jpg" alt="주차장 4" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('6.jpg')">
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ 입장 시간 / 일정 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">📋</span>
+      <span class="sec-title">입장 시간 및 일정</span>
+    </div>
+    <div class="sec-body">
+      <div class="callout blue">
+        <span class="ci">✅</span>
+        <div>
+          <strong>[강의 신청했다면!]</strong><br>
+          10:00~11:00 &nbsp;⭐ 특별 강의 — 김상균 교수님<br>
+          11:10~13:00 &nbsp;오전 강의 5종 中 택 1<br>
+          13:10~15:00 &nbsp;오후 강의 5종 中 택 1
+        </div>
+      </div>
+      <div class="callout green" style="margin-top:8px;">
+        <span class="ci">🏢</span>
+        <div>
+          <strong>[강의 신청을 안 했다면!]</strong><br>
+          10:00~17:00 &nbsp;에듀테크 부스 체험 50여 개!
+        </div>
+      </div>
+
+      <div style="font-size:13px;font-weight:700;color:var(--sub);margin:16px 0 0;">📋 연수 시간표</div>
+      <div class="schedule-wrap">
+        <table class="schedule-table">
+          <thead>
+            <tr><th>시간</th><th>장소</th><th>강의 및 강사</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-star">
+              <td class="t-time">10:00~11:00</td>
+              <td>젬마홀(B107)</td>
+              <td>⭐ AI 시대, 교육의 변화와 교사의 역할 재설계<br>
+                <span style="font-size:12px;color:var(--sub);">— 김상균 교수님</span></td>
+            </tr>
+            <tr>
+              <td class="t-time" rowspan="5">오전<br>11:10~13:00</td>
+              <td>젬마홀(B107)</td><td>연구대회를 관통하는 4가지 입상 설계의 원리 — 노기현</td>
+            </tr>
+            <tr><td>B109</td><td>구글 앱스 스크립트로 만드는 대시보드 — 정영철</td></tr>
+            <tr><td>B111</td><td>AI 시대지만 그래도 네가 선생님을 했으면 좋겠어 — 참쌤</td></tr>
+            <tr><td>B115</td><td>수업이 달라지는 로봇 활용법 — 김동현</td></tr>
+            <tr><td>B116</td><td>AI 윤리 리터러시 수업법 — 이희수</td></tr>
+            <tr>
+              <td class="t-time" rowspan="5">오후<br>13:10~15:00</td>
+              <td>젬마홀(B107)</td><td>부자 되는 선생님은 무엇이 다를까? — 장세미</td>
+            </tr>
+            <tr><td>B109</td><td>2026 캔바 AI 신기능 완전 정복 — 황은지</td></tr>
+            <tr><td>B111</td><td>'딸깍'으로 완성하는 바이브 코딩 — 김승현</td></tr>
+            <tr><td>B115</td><td>내 수업에 딱 맞는 교과 세특 정밀 프롬프팅 — 이진솔</td></tr>
+            <tr><td>B116</td><td>AI 웹툰 제작으로 완성하는 창의성 UP 교육 — 박권</td></tr>
+            <tr>
+              <td class="t-time">10:00~17:00</td>
+              <td>눈꽃광장홀</td><td>🏢 에듀테크 부스 체험 (50여 개)</td>
+            </tr>
+            <tr class="row-mem">
+              <td class="t-time">15:00~16:00</td>
+              <td colspan="2">💙 대면 분과 회의
+                <span style="display:inline-block;font-size:11px;font-weight:700;
+                  background:var(--green);color:#fff;padding:1px 8px;border-radius:20px;margin-left:4px;">
+                  연구회 회원
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue" style="margin-top:14px;">
+        <span class="ci">💙</span>
+        <div>
+          <strong>연구회 회원 분들!</strong> 대면 분과 회의는 <strong>15:00~16:00</strong>입니다.<br>
+          각 분과별 장소는 아래를 참고해 주세요.
+        </div>
+      </div>
+      <img src="7.png" alt="분과 회의 장소 안내" class="sec-img" style="margin-top:10px;">
+    </div>
+  </div>
+
+  <!-- ⑤ 간식 안내 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">🎁</span>
+      <span class="sec-title">간식 &amp; 굿즈 안내</span>
+    </div>
+    <div class="sec-body">
+      <div class="callout amber">
+        <span class="ci">🚚</span>
+        <div>전체 참가자 모두에게 간식 쿠폰 제공!! 푸드트럭 <strong>3대</strong> 방문 예정 🎉<br>
+        <span style="font-size:13px;">참가비 1만원에 모두 포함되어 있습니다.</span></div>
+      </div>
+      <div class="snack-list">
+        <div class="snack-item">
+          <span class="snack-em">☕</span>
+          <div class="snack-body">
+            <div class="snack-name">음료 택 1</div>
+            <div class="snack-desc">아이스 아메리카노 or 아이스티</div>
+          </div>
+        </div>
+        <div class="snack-item">
+          <span class="snack-em">🌭</span>
+          <div class="snack-body">
+            <div class="snack-name">뉴욕 핫도그</div>
+          </div>
+        </div>
+        <div class="snack-item">
+          <span class="snack-em">🏆</span>
+          <div class="snack-body">
+            <div class="snack-name">연구회 캐릭터 머그컵</div>
+            <div class="snack-desc">연구회 한정 굿즈! 가져가세요 😊</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">
+        <img src="10.jpg" alt="뉴욕 핫도그 1" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('10.jpg')">
+        <img src="11.jpg" alt="뉴욕 핫도그 2" style="width:100%;border-radius:var(--r-sm);border:1.5px solid var(--border);cursor:zoom-in;" onclick="openLb('11.jpg')">
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ 준비물 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">🎒</span>
+      <span class="sec-title">당일 준비물</span>
+    </div>
+    <div class="sec-body">
+      <div class="callout blue">
+        <span class="ci">💻</span>
+        <div>
+          강좌에 따라 다르지만, <strong>노트북</strong>이 필요할 수 있어요!<br>
+          아래 표를 참고해 주세요.<br>
+          <span style="font-size:13px;">노트북 필요 강좌의 경우 미리 충전 후 지참해 주세요. (강의실 내 콘센트 제한)</span>
+        </div>
+      </div>
+
+      <div style="font-size:13px;font-weight:700;color:var(--sub);margin:14px 0 6px;">💻 노트북 준비 여부</div>
+      <div style="overflow-x:auto;border-radius:var(--r-sm);">
+        <table class="schedule-table">
+          <thead>
+            <tr><th>시간</th><th>장소</th><th>강의 및 강사</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-star">
+              <td class="t-time">10:00~11:00</td>
+              <td>젬마홀</td>
+              <td>AI 시대, 교육의 변화와 교사의 역할 재설계 — 김상균 교수</td>
+            </tr>
+            <tr>
+              <td class="t-time" rowspan="5">오전<br>11:10~13:00</td>
+              <td>젬마홀</td><td>연구대회를 관통하는 4가지 입상 설계의 원리 — 노기현</td>
+            </tr>
+            <tr><td>B109</td><td>구글 앱스 스크립트로 만드는 대시보드 — 정영철 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr><td>B111</td><td>AI 시대지만 그래도 네가 선생님을 했으면 좋겠어 — 참쌤 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr><td>B115</td><td>수업이 달라지는 로봇 활용법 — 김동현 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr><td>B116</td><td>AI 윤리 리터러시 수업법 — 이희수 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr>
+              <td class="t-time" rowspan="5">오후<br>13:10~15:00</td>
+              <td>젬마홀</td><td>부자 되는 선생님은 무엇이 다를까? — 장세미</td>
+            </tr>
+            <tr><td>B109</td><td>2026 캔바 AI 신기능 완전 정복 — 황은지 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr><td>B111</td><td>'딸깍'으로 완성하는 바이브 코딩 — 김승현 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr><td>B115</td><td>내 수업에 딱 맞는 교과 세특 정밀 프롬프팅 — 이진솔 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+            <tr><td>B116</td><td>AI 웹툰 제작으로 완성하는 창의성 UP 교육 — 박권 &nbsp;<span style="color:var(--amber);font-weight:700;font-size:12px;">💻 노트북 필요</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑦ 브로슈어 -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-icon">📄</span>
+      <span class="sec-title">현장 안내 브로슈어</span>
+    </div>
+    <div class="sec-body">
+      <div class="brochure-grid">
+        <img src="8.png" alt="브로슈어 1" class="brochure-thumb" onclick="openLb('8.png')">
+        <img src="9.png" alt="브로슈어 2" class="brochure-thumb" onclick="openLb('9.png')">
+      </div>
+      <p class="brochure-hint">🔍 이미지를 클릭하면 크게 볼 수 있어요</p>
+    </div>
+  </div>
+
+  <!-- 문의 -->
+  <div class="dlabel">문의</div>
+  <a href="https://pf.kakao.com/_shmDn" target="_blank" class="kakao-btn">
+    💬 문의는 카카오채널로!
+  </a>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  이번 박람회, 하나 하나 세심히 준비하고 있습니다!<br>
+  우리 함께 만들어가는 행사인 만큼 선생님들의 뜨거운 참여와 응원이 큰 힘이 됩니다 💪<br><br>
+  <strong>🎊 6월 20일, 숙명여대에서 만나요! 🎊</strong><br><br>
+  <span style="font-size:12px;">AI미래교육연구회 드림 💙 &nbsp;|&nbsp;
+    문의: <a href="https://pf.kakao.com/_shmDn">연구회 카카오채널</a></span>
+</div>
+
+<script>
+function openLb(src){
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb(){
+  document.getElementById('lb').classList.remove('active');
+  document.getElementById('lb-img').src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeLb();
+});
+</script>
+</body>
+</html>
